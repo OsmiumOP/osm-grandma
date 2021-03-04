@@ -12,3 +12,7 @@
 3. PROBABLITY FACTOR ADDED | There could be chances that she might refuse to revive you.
 4. Performs multiple animations while she does her tasks. 
 5. Regular Updates. 
+
+### To-Do List 
+1. Add a config file to make editing easier for Non-Developers. 
+2. Create a Close Range Blip for Granny on MAP
