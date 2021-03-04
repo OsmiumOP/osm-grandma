@@ -4,7 +4,7 @@
 
 ## [PREVIEW/DEMO](https://www.youtube.com/watch?v=26tDBc0C0Vk)
 
-## [DISCORD SERVER for SUPPORT] (https://discord.gg/trxbpW6S)
+## [DISCORD SERVER for SUPPORT](https://discord.gg/trxbpW6S)
 
 ## Features
 1. Granny Actually appears at the Revive Location 
