@@ -6,6 +6,8 @@
 
 ## [DISCORD SERVER for SUPPORT](https://discord.gg/trxbpW6S)
 
+#### Thanks to GentleDreamTree#7217 for helping in all the Post-Development Work like Teasers, Testing and Recording. 
+
 ## Features
 1. Granny Actually appears at the Revive Location 
 2. Doesn't try to fight, or move around, or kill you. She is a Calm Granny XD. 
