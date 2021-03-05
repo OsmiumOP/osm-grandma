@@ -9,7 +9,7 @@
 
 #### Thanks to GentleDreamTree#7217 for helping in all the Post-Development Work like Teasers, Testing and Recording. 
 
-#### Location : { x = 3312.51, y = 5178.5, z = 19.61, h = 33.92 } of (MAP LINK)[https://i.imgur.com/G6pPmQ6.png]
+#### Location : { x = 3312.51, y = 5178.5, z = 19.61, h = 33.92 } of [MAP LINK](https://i.imgur.com/G6pPmQ6.png)
 ## Features
 1. Granny Actually appears at the Revive Location 
 2. Doesn't try to fight, or move around, or kill you. She is a Calm Granny XD. 
