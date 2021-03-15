@@ -8,8 +8,8 @@ Citizen.CreateThread(function()
 end)
 
 -- CONFIG VARS
-local grannypos = { x = 3312.51, y = 5178.5, z = 19.61, h = 33.92 }
-local  model = "ig_mrs_thornhill"
+grannypos = { x = 3312.95, y = 5178.88, z = 19.61, h = 210.79 }
+model = "ig_mrs_thornhill"
 
 
     Citizen.CreateThread(function()
@@ -18,7 +18,7 @@ local  model = "ig_mrs_thornhill"
        RequestModel(hash)
         -- Wait until Model has loaded
         while not HasModelLoaded(hash) do Citizen.Wait(0) end
-        ped = CreatePed(4, hash, grannypos.x, grannypos.y, grannypos.z, 0.0, true, true)
+        ped = CreatePed(4, hash, grannypos.x, grannypos.y, grannypos.z, grannypos.h, true, true)
 
         -- Makes the ped not run away/die/get hurt/etc
         FreezeEntityPosition(ped, true)
