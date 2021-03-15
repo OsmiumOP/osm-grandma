@@ -34,11 +34,8 @@ local  model = "ig_mrs_thornhill"
 function loadAnimDict(dict)
 	while (not HasAnimDictLoaded(dict)) do
 		RequestAnimDict(dict)
-		Citizen.Wait(5)
 	end
 end
-
-local grannypos = { x = 3312.51, y = 5178.5, z = 19.61, h = 33.92 }
 
 local prob = math.random(1,10)
 
