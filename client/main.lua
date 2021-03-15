@@ -34,6 +34,7 @@ model = "ig_mrs_thornhill"
 function loadAnimDict(dict)
 	while (not HasAnimDictLoaded(dict)) do
 		RequestAnimDict(dict)
+		Citizen.Wait(2)
 	end
 end
 
