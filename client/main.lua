@@ -8,7 +8,7 @@ Citizen.CreateThread(function()
 end)
 
 -- CONFIG VARS
-grannypos = { x = 3312.95, y = 5178.88, z = 19.61, h = 210.79 }
+grannypos = { x = 3312.95, y = 5178.88, z = 18.63, h = 210.79 }
 model = "ig_mrs_thornhill"
 
 
