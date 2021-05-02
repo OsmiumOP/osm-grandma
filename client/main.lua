@@ -7,42 +7,32 @@ Citizen.CreateThread(function()
     end
 end)
 
-pedloaded = false
+local pedloaded = false
 
 -- CONFIG VARS
 grannypos = { x = 3312.95, y = 5178.88, z = 18.63, h = 210.79 }
 model = "ig_mrs_thornhill"
 
+local hash = GetHashKey(model)
 
 Citizen.CreateThread(function()
 if not pedloaded then 
-       local hash = GetHashKey(model) -- Store model as Hash
-
-    while not HasModelLoaded(hash) do
+    RequestModel(GetHashKey(model))
+	
+    while not HasModelLoaded(GetHashKey(model)) do
         Wait(1)
     end
-  
-        ped = CreatePed(4, hash, grannypos.x, grannypos.y, grannypos.z, grannypos.h, false, true)
 
-        -- Makes the ped not run away/die/get hurt/etc
-        FreezeEntityPosition(ped, true)
-        SetEntityInvincible(ped, true)
-        SetBlockingOfNonTemporaryEvents(ped, true)
-	
-	pedloaded = true
---         local pedanimdict = "mini@drinking"
---         local pedanim = "shots_barman_b"
---         loadAnimDict(pedanimdict)	
---         TaskPlayAnim(ped, pedanimdict, pedanim, 3.0, 3.0, -1, 49, 1, 0, 0, 0)
-end
-    end)
+	local npc = CreatePed(4, hash, grannypos.x, grannypos.y, grannypos.z, grannypos.h, false, true)
 
--- function loadAnimDict(dict)
--- 	while (not HasAnimDictLoaded(dict)) do
--- 		RequestAnimDict(dict)
--- 		Citizen.Wait(2)
--- 	end
--- end
+	SetEntityHeading(npc, grannypos.h)
+	FreezeEntityPosition(npc, true)
+	SetEntityInvincible(npc, true)
+	SetBlockingOfNonTemporaryEvents(npc, true)
+
+	local pedloaded = true
+
+end)
 
 local prob = math.random(1,10)
 
