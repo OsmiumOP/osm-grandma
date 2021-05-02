@@ -16,8 +16,13 @@ model = "ig_mrs_thornhill"
 local hash = GetHashKey(model)
 
 Citizen.CreateThread(function()
-if not pedloaded then 
-    RequestModel(GetHashKey(model))
+while true do
+    Citizen.Wait(1)
+  local plyCoords = GetEntityCoords(PlayerPedId(), 0)
+        local distance = #(vector3(grannypos.x, grannypos.y, grannypos.z) - plyCoords)
+        if distance < 100 then
+
+  RequestModel(GetHashKey(model))
 	
     while not HasModelLoaded(GetHashKey(model)) do
         Wait(1)
@@ -29,9 +34,8 @@ if not pedloaded then
 	FreezeEntityPosition(npc, true)
 	SetEntityInvincible(npc, true)
 	SetBlockingOfNonTemporaryEvents(npc, true)
-
-	local pedloaded = true
-
+end 
+end 
 end)
 
 local prob = math.random(1,10)
