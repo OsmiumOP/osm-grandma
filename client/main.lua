@@ -7,36 +7,24 @@ Citizen.CreateThread(function()
     end
 end)
 
-local pedloaded = false
-
 -- CONFIG VARS
-grannypos = { x = 3312.95, y = 5178.88, z = 18.63, h = 210.79 }
-model = "ig_mrs_thornhill"
-
-local hash = GetHashKey(model)
-
+local grannypos = { x = 3312.95, y = 5178.88, z = 18.63, h = 210.79 }
 Citizen.CreateThread(function()
-while true do
-    Citizen.Wait(1)
-  local plyCoords = GetEntityCoords(PlayerPedId(), 0)
-        local distance = #(vector3(grannypos.x, grannypos.y, grannypos.z) - plyCoords)
-        if distance < 100 then
-
-  RequestModel(GetHashKey(model))
-	
-    while not HasModelLoaded(GetHashKey(model)) do
+    modelHash = GetHashKey("ig_mrs_thornhill")
+    RequestModel(modelHash)
+    while not HasModelLoaded(modelHash) do
         Wait(1)
     end
-
-	local npc = CreatePed(4, hash, grannypos.x, grannypos.y, grannypos.z, grannypos.h, false, true)
-
-	SetEntityHeading(npc, grannypos.h)
-	FreezeEntityPosition(npc, true)
-	SetEntityInvincible(npc, true)
-	SetBlockingOfNonTemporaryEvents(npc, true)
-end 
-end 
+    creategrannypos()
 end)
+
+function creategrannypos()
+    created_ped = CreatePed(0, modelHash, grannypos.x, grannypos.y, grannypos.z, grannypos.h, false, true)
+    FreezeEntityPosition(created_ped, true)
+    SetEntityInvincible(created_ped, true)
+    SetBlockingOfNonTemporaryEvents(created_ped, true)
+    TaskStartScenarioInPlace(created_ped, "WORLD_HUMAN_COP_IDLES", 0, true)
+end
 
 local prob = math.random(1,10)
 
