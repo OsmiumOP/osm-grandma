@@ -52,9 +52,9 @@ Citizen.CreateThread(function()
                         }, {}, {}, {}, function()
                             if prob > 5 then
                              loadAnimDict('missheistdockssetup1clipboard@base')
-                             TaskPlayAnim( PlayerPedId(), "missheistdockssetup1clipboard@base", "base", 3.0, 1.0, -1, 49, 0, 0, 0, 0 ) 
+                             TaskPlayAnim(PlayerPedId(), "missheistdockssetup1clipboard@base", "base", 3.0, 1.0, -1, 49, 0, 0, 0, 0 ) 
                              loadAnimDict(healAnimDict)	
-                             TaskPlayAnim(ped, healAnimDict, healAnim, 3.0, 3.0, 8000, 49, 0, 0, 0, 0)
+                             TaskPlayAnim(created_ped, healAnimDict, healAnim, 3.0, 3.0, 8000, 49, 0, 0, 0, 0)
                              QBCore.Functions.Progressbar("check-", "Blessing You with a Life", 10000, false, true, {
                                 disableMovement = true,
                                 disableCarMovement = true,
