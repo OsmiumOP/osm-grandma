@@ -82,3 +82,11 @@ Citizen.CreateThread(function()
         end
     end
 end)
+
+
+function loadAnimDict(dict)
+	while (not HasAnimDictLoaded(dict)) do
+		RequestAnimDict(dict)
+		Citizen.Wait(2)
+	end
+end
